@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>打地鼠</title>
+    <script src="jquery-1.12.4.js"></script>
+    <script src="index.js"></script>
+<!--    <link rel="stylesheet" href="">-->
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    .container{
+        background: url("images/game_bg.jpg") no-repeat 0 0;
+        width: 320px;
+        height: 480px;
+        margin: 50px auto;
+        position: relative;
+    }
+    .container>.score{
+        margin-left: 60px;
+        color: white;
+    }
+    .container>.progress{
+        background-image: url("images/progress.png");
+        width: 180px;
+        height: 16px;
+        top: 66px;
+        left: 63px;
+        position: absolute;
+    }
+    .container>.start{
+        width: 150px;
+        height: 35px;
+        background:linear-gradient(#cd400a, #ff041d);
+        border-radius: 30px;
+        border: none;
+        top: 300px;
+        left: 85px;
+        position: absolute;
+        color: white;
+        font-size: 20px;
+        letter-spacing: 5px;
+        outline: none;
+    }
+
+    .container>.rule{
+        width: 100%;
+        height: 20px;
+        background: darkgrey;
+        position: absolute;
+        bottom: 0;
+        text-align: center;
+    }
+    .container>.rules{
+        height: 100%;
+        width: 100%;
+        background:rgba(0,0,0,0.5);
+        position: absolute;
+        padding-top: 100px;
+        top: 0;
+        box-sizing: border-box;
+        text-align: center;
+        display: none;
+    }
+    .container>.rules p{
+        font-size: 15px;
+        color: white;
+        line-height: 50px;
+    }
+    .rules>a{
+        color: red;
+        line-height: 150px;
+    }
+    .gOver{
+        height: 100%;
+        width: 100%;
+        background:rgba(0,0,0,0.5);
+        position: absolute;
+        padding-top: 160px;
+        top: 0;
+        text-align: center;
+        letter-spacing: 10px;
+        box-sizing: border-box;
+        display: none;
+    }
+    .gOver>h1{
+        color: #cd400a;
+        text-shadow: 3px 3px 0 white;
+        font-size: 40px;
+    }
+    .gOver>button{
+        width: 150px;
+        height: 35px;
+        background:linear-gradient(#cd400a, #1f4bff);
+        border-radius: 30px;
+        border: none;
+        top: 300px;
+        left: 85px;
+        position: absolute;
+        color: white;
+        font-size: 20px;
+        letter-spacing: 5px;
+        outline: none;
+    }
+
+</style>
+<body>
+    <div class="container">
+        <h1 class="score">0</h1>
+        <div class="progress"></div>
+        <button class="start">开始游戏</button>
+
+        <div class="rule">游戏规则</div>
+        <div class="rules">
+            <p>游戏规则:</p>
+            <p>1.游戏时间:60s</p>
+            <p>2.拼手速,殴打灰太狼+10分</p>
+            <p>3.殴打小灰灰-10分</p>
+            <a href="#" class="close">[关闭]</a>
+        </div>
+        <div class="gOver">
+            <h1>游戏结束</h1>
+            <button id="restart" >重新开始</button>
+        </div>
+
+    </div>
+</body>
+</html>
